@@ -1,0 +1,211 @@
+#################################################
+#########				#########
+#########	C O N T E N U		#########
+#########				#########
+#################################################
+
+
+-6 modes de jeu:
+	-mode normal:
+		-le but est de manger le plus de pomme sans mourir (en se cognant 
+		contre son propre corp ou contre un mur).
+	-mode ouvert:
+		-le but est de manger le plus de pomme sans mourir (en se cognant
+		contre son propre corp), on peut aussi traverser les murs.
+	-mode piege:
+		-le but est de manger le plus de pomme sans mourir (en se cognant 
+		contre son propre corp ou contre un mur ou contre un piege).
+	-mode multiproie:
+		-le but est de manger le plus de pomme sans mourir (en se cognant 
+		contre son propre corp ou contre un mur), de temps en temps(tous 
+		les 40 a 80 ticks) une pomme suplementaire apparait sur le terrain
+		avec un maximum de 10 pomme simultanément.
+	-mode multijoueur:
+		-le but est de manger plus de pomme que l'autre joueur sans mourir
+		(en se cognant contre son propre corp ou contre un mur ou contre 
+		un piege), si l'autre joueur meurt en se cognant a nous on marque 
+		15 pts de plus.
+	-mode special:
+		-ce mode permet au joueur de parametrer sa parti lui meme.il 
+		pourra choisir les bonus et les malus qu'il desire ainsi que 
+		s'il veut activer les bordures,le mode multijoueur,le mode 
+		multiproie, ou le mode piege
+
+-5 vitesses:
+	-vitesse lente
+	-vitesse normale
+	-vitesse rapide
+	-vitesse experte
+	-vitesse acceleré (associé a une fonction affine)
+
+-9 themes:
+	-theme ninja
+	-theme negatif
+	-theme ikeo
+	-theme doume
+	-theme deadpoule
+	-theme girly
+	-theme darck-girly
+	-theme epm
+	-theme zeldo
+
+-le menu pause:
+	-en appuyant sur "p" ou "escape" quand on est en jeu, un menu pause 
+	s'ouvre et nous permet de reprendre la partie ou de quitter.
+
+-les bonus:
+	-la vie:
+		-une vie apparait de temps en temps(tous les 500 a 1200 ticks),
+		quand on la mange on gagne une vie supplementaire (elle n'est 
+		disponible qu'en solo). il ne peut pas y avoir  que 2 vie en meme 
+		temps sur le terrainau maximum. le maximum de vie collectable est 
+		de 10.la vie donne egalement 25 points.
+	-les points en plus:
+		-un coffre vert apparait de temps en temps(tous les 150 a 750 
+		ticks).quand on le mange on gagne 35 points suplémentaires.
+		il ne peut pas y en avoir plus de un a la fois sur le terrain.
+	-le multiplicateur de point:
+		-il a 1 chance sur 300 d'apparaitre a chaque deplacement du 
+		serpent. quand on le mange on gagne un bonus de 4 qui s'ajoute a 
+		l'ancien multiplicateur de point. le bonus multiplicateur de point
+		maximal est 41. en multijoueur le bonus n'est ajouté qu'a celui
+		qui a ramassé l'objet.il ne peut pas y avoir plus de 1 bonus a la
+		fois sur le terrain.son effet dure entre 1 et 300 tick.
+	-le bouclier:
+		-il apparait entre 450 et 550 ticks quand le mode piege est activé,
+		une fois mangé quand on passe sur un piege il est detruit, il ne 
+		peut y en avoir plus de 1 a la fois sur le terrain, si une 
+		personne a le pouvoir du bouclier actif alors il ne peut pas spawn
+		en une partie il ne peut pas y en avoir plus de 3.le bonus est
+		specifique au serpent qui l'a mangé.il apparait a coté du score
+		quand il est actif
+
+-les malus:
+	-les points en moins:
+		-il apparait entre 1 et 1700 tiks,une fois mangé le joueur qui le 
+		prend perd 50 points.le maximum de cet objet sur le terrain est de
+		3.si un bonus multiplicateur est actif alors le joueur perdra les
+		points abituelle multipliee par le bonus.
+	-le diviseur de score
+		-il apparait entre 1 et 4000 ticks.il ne peut y en avoir que 1 a 
+		la fois sur le terrain.si un joueur le mange son score sera divisé
+		par 2.si un bonus multiplicateur est actif alors il sera divisé 
+		par le chiffre habituelle multiplié par le bonus actif.
+	-l'inverseur de touches:
+		-quand on la mange nos touches sont changé, si on meurt et quil 
+		nous reste 1 vie alors le malus se desactive.il peut y en avoir 3
+		a la fois sur le terrain.il apparait entre 1 et 1900 ticks, et dur 
+		entre 5 et 30 ticks.il change le coté de la tete quand il est 
+		actif.
+
+-les objets:
+	-la piece:
+		-elle apparait de temps en temps(entre 20 et 70 ticks),il ne peut
+		y en avoir que 5 en meme temps sur le terrain.elle raporte 3 piece 
+		suplementaire.
+	-les coffres:
+		-ils apparaissent rarement(entre 200 et 5000 ticks), il peut y en 
+		avoir maximum 3 a la fois sur le terrain.si un joueur le mange il
+		fait gagner 500 piece.
+
+	-le multiplicateur de pieces:
+		ce sont deux pieces qui une fois collecter vont ajouter +2 au
+		multiplicateur de point precedent, ce bonus est 
+		cumulable jusqua obtenir un multiplicateur vallant "fois 11".
+		il a une chance sur 300 d'apparaitre a chaque tick.
+		une fois ramassé sont temps d'activation varie de 1 tick a 300
+		ticks.il ne peut y en avoir que un a la fois sur le terrain.
+		en multijoueur le bonus s'applique au deux joueurs.
+	-les pommes:
+		-les pommes en generals:
+			elles font grandir le serpent de 1 case quand le serpent 
+			la mange
+		-les différentes pommes:
+			-la pomme rouge:
+				c'est une pomme qui a 95% de chance d'apparaitre,
+				une fois mangé elle rajoute 1 points au score
+			-la pomme en or:
+				une pomme a 5% de chance d'etre une pomme en or 
+				quand elle apparait,la pomme en or donne 10 point,
+				elle donne également 50 pieces
+
+-le systeme d'argent:
+	-le maximum d'argent obtenable est 99999 piece , l'apparition de bonus 
+	de piece comme les pieces ou les pommes en or prend compte de cette limite
+	pour leurs apparitions (on verifie que l'argent actuel + l'argent 
+	disponible sur le terrain ne depasse pas cette limite) 
+
+-le systeme de point:
+	-le maximum de point est 9999999 points, la partie continuera tous de meme 
+	apres ce score atteint et les objet,bonus,malus continueront normalement
+	le score ne peut pas etre negatif
+
+-les skins
+	-il en existe plusieurs qui sont obtenable via succes ou via le shop
+
+-le shop
+	-on peut acheter une multitude de bonus d'objet d'amelioration et de skin
+
+-les options:
+	-dans le menu option il est possible de definir le mode de jeu, 
+	l'activation ou la desactivation des bonus, des malus, du son, des 
+	musiques, et le choix du theme.
+	-si le mode special est selectioné une fleche apparaitra pour configurer
+	le mode special,si jamais les bonus/malus sont desactivé les fenetres 
+	permetant la configuration precise de celle ci n'apparaitront pas.
+	-seul les bonus compatible avec les modes selectioné apparaitront
+
+-les scores
+	-les 5 meilleurs scores de chaque mode sont enregistré et reclassé dans
+	l'ordre du meilleur au moins fort
+
+-les sauvegardes
+	-pour eviter de reconfigurer toujours les options et pour le bon 
+	fonctionnement du jeu, le mode, la vitesse, le theme, l'activation du son,
+	l'activation de la musique, le dernier panneau d'affichage des scores 
+	consulté, les parametres des modes du mode special(bordure,piege,
+	multiproie,multijoueur),l'activation des malus,l'activation des malus,les 
+	parametre du mode special des bonus(la multiplication des point,les 10 	
+	points bonus,la vie,le bouclier),l'argent du joueur sont stocké dans un 
+	fichier .txt
+
+-les controles:
+	-en mode solo:
+		on peut utiliser les fleche directionnel du clavier pour se
+		deplacer ainsi que la souris (clic droit pour que le serpent 
+		tourne a droite et inversement)
+	-en mode multijoueur:
+		le joueur 1 utilise respectivement pour avancer, reculer, 
+		aller a droite, aller a gauche, les touches z,s,d,q, et le 
+		joueur 2 utilise les fleches directionnel du clavier 
+
+-les sons:
+	-les musiques:
+		sont toutes libres de droit et certaine ont été réalisé
+		pour le jeu. les musiques du jeu sont de courte boucle qui se 
+		repete pour donner l'ilusion que le chanson ne s'arrete jamais.
+		une grande partie des musique ont été prise sur le site:
+		https://www.looperman.com/
+	-les bruitages:
+		sont tous libre de droit, certain ont été réalisé pour le jeu
+		et dautre ont ete trouvé sur des sites tel que 
+		https://freesound.org/
+
+les graphismes:
+	-les sprites de tous les objet du jeu:
+		ont ete réalisé par simon aruza specialement pour le jeu.
+	-les logos:
+		simon a fait sont propre logo
+		valentin a fait le logo du studio "ninja mamotte game"
+	-la maquette du jeu:
+		a ete réaliser par valentin noailles
+	-les polices d'ecriture:
+		ont ete telechargé sur dafont
+
+precision:
+	-toutes les idées n'ont pas pu etre réaliser par faute de temps ou car 
+	elles n'apportai rien de vraiment nescessaire au jeu.
+	-si vous voulez ajouter un logo au raccourci "lancez le jeu" aller dans
+ 	propriété puis icon puis chercher le fichier programme,image,logo_snake
+	puis validé.
+	

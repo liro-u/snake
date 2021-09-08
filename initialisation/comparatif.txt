@@ -1,0 +1,35 @@
+mode
+vitesse
+theme
+son
+musique
+affichage mode score
+ouvert special
+piege special
+multiproie special
+multijoueur special
+bonus
+malus
+x2 point special
++10pts special
+vie special
+bouclier special
+argent
+
+1
+0
+0
+1
+1
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+0

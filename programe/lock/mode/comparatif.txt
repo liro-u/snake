@@ -1,0 +1,6 @@
+normal
+ouvert
+piege
+multiproie
+multijoueur
+special

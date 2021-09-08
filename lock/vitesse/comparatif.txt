@@ -1,0 +1,5 @@
+lent
+normal
+rapide
+expert
+acceleration
